@@ -1,0 +1,9 @@
+---
+- name: Install epel-release for redis
+  yum: name=epep-release state=latest
+
+- name: Install redis
+  yum: name=redis state=latest
+
+- name: start redis
+  service: name=redis state=started

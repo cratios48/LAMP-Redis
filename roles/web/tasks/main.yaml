@@ -1,0 +1,12 @@
+---
+- name: Install Apache httpd and php
+  yum: name={{ items }} state=latest
+  with_items:
+    - httpd
+    - php
+    - php-mysql
+    - php-odbc
+    - php-pdo
+
+- name: Start Apache httpd
+  service: name=httpd state=started
